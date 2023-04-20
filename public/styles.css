@@ -1,0 +1,58 @@
+body{
+    background-color: aliceblue;
+    background-image: url("funBackgroundImage.jpg");
+    
+    background-size: 100%;
+   
+}
+.heading{
+    background-color: black;
+    color:#F90716;
+    font-size: 90px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-bottom: 0;
+}
+
+.button{
+    color: #31E1F7;
+    background-color: #060047;
+    width : 300px;
+    height : 100px;
+    font-size: 50px;
+    position: relative;
+    left : 40%;
+    border-radius: 40px;
+    margin-top : 25px;
+    margin-bottom: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+.jokeBox{
+    width : 700px;
+    background-color: white;
+    margin : auto;
+    margin-top: 0px;
+    border-radius: 20px;
+    box-shadow: 4px 3px 7px 2px yellow;
+    background-color: black;
+    color : #16FF00;
+    padding-left : 10px;
+    /*font-family: "Architects Daughter", cursive;*/
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.smiley{
+    height : 100px;
+    width : 100px;
+    margin-top: 8px;
+}
+
+.button:hover{
+    color : #FF1700;
+    background-color: black;
+    box-shadow: inset 0 0  8px #f9f8fc;
+}

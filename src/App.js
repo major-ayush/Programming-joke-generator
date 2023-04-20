@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Heading  from './containers/heading';
+import Button from './containers/button';
+import JokeBox  from './containers/JokeBox';
 
 function App() {
+
+  const [joke, getJoke] = useState("");
+  const [isClicked, setClick] = useState(false);
+  const apiUrl = "https://v2.jokeapi.dev/joke/Programming";
+  
+  useEffect(
+    () => {
+      fetch(apiUrl).then(response => response.json()).then(data => {
+        if(data.type === "twopart")
+        {
+          var twopartJoke = data.setup + "\n\n\n" + data.delivery;
+          getJoke(twopartJoke); 
+        }
+        else
+        {
+          getJoke(data.joke);
+        }
+      });
+    }, [isClicked]
+  );
+
+  function clickHandeler()
+  {
+    setClick(prevValue => !prevValue);
+  }
+  console.log(joke);
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Heading/>
+      <Button  
+        onClick = {clickHandeler}
+      />
+      <JokeBox
+        joke = {joke}
+      />
     </div>
   );
 }
